@@ -5,6 +5,7 @@ import 'package:news_app/resources/theme/app_colors.dart' as colors;
 import '../../../../resources/theme/app_colors.dart';
 import '../../../../resources/theme/text_styles.dart' as styles;
 import '../../../widgets/title_tile_widget.dart';
+import '../../main_screeen/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,6 +17,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,47 +36,61 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const TitleTileWidget(
-                    title: "Login",
-                    subTitle: "Welcome back!",
-                  ),
-                  CustomTextField(
-                    controller: emailController,
-                    hintText: 'Email Address',
-                    label: 'Email',
-                    prefixIconData: Icons.email_outlined,
-                  ),
-                  const SizedBox(height: 16.0),
-                  CustomTextField(
-                    controller: passwordController,
-                    hintText: 'Password',
-                    label: 'Password',
-                    prefixIconData: Icons.lock,
-                    isSecure: true,
-                    additionalTitle: 'Forget Password',
-                    onAdditional: (){},
-                  ),
-                  // Column(
-                  //   children: [
-                  //     Row(
-                  //       children: [
-                  //         Text('Password'),
-                  //         TextButton(
-                  //             onPressed: () {}, child: Text("Forget Password"))
-                  //       ],
-                  //     ),
-                  //     TextField(),
-                  //   ],
-                  // ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Text('SIGN IN'),
-                    label: Icon(Icons.arrow_forward),
-                  )
-                ],
+              child: Form(
+                key: formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const TitleTileWidget(
+                      title: "Login",
+                      subTitle: "Welcome back!",
+                    ),
+                    CustomTextField(
+                      controller: emailController,
+                      hintText: 'Email Address',
+                      label: 'Email',
+                      prefixIconData: Icons.email_outlined,
+                    ),
+                    const SizedBox(height: 16.0),
+                    CustomTextField(
+                      controller: passwordController,
+                      hintText: 'Password',
+                      label: 'Password',
+                      prefixIconData: Icons.lock,
+                      isSecure: true,
+                      additionalTitle: 'Forget Password',
+                      onAdditional: () {},
+                    ),
+                    // Column(
+                    //   children: [
+                    //     Row(
+                    //       children: [
+                    //         Text('Password'),
+                    //         TextButton(
+                    //             onPressed: () {}, child: Text("Forget Password"))
+                    //       ],
+                    //     ),
+                    //     TextField(),
+                    //   ],
+                    // ),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        if (formKey.currentState != null) {
+                          if (formKey.currentState!.validate()) {
+                            debugPrint("validated");
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(builder: (_) => const MainScreen()),
+                                (route) => false);
+                          } else {
+                            debugPrint("not validated");
+                          }
+                        }
+                      },
+                      icon: Text('SIGN IN'),
+                      label: Icon(Icons.arrow_forward),
+                    )
+                  ],
+                ),
               ),
             ),
             Column(

@@ -35,6 +35,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   void initState() {
     showText = !widget.isSecure;
     super.initState();
+
   }
 
   @override
@@ -61,16 +62,22 @@ class _CustomTextFieldState extends State<CustomTextField> {
               ],
             ),
           ),
-        TextField(
+        TextFormField(
           controller: widget.controller,
           obscureText: !showText,
+
+          validator: (txt) {
+            if(txt == null) return "This field is mandatory";
+            if(txt.isEmpty) return "This field must be filled";
+            return null;
+          },
           decoration: InputDecoration(
             hintText: widget.hintText,
+
             contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
             // prefix: Text("Hello"),
             suffix: widget.isSecure ? InkWell(onTap: (){
               setState(() {
-
                 showText = !showText;
               });
             }, child: Icon(showText ? Icons.visibility : Icons.visibility_off)) : null,

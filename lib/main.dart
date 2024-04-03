@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/presentation/screens/main_screeen/main_screen.dart';
 import 'package:news_app/presentation/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:news_app/resources/theme/app_colors.dart';
 
@@ -13,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'News App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: primary500),
-        useMaterial3: true,
-      ),
-      home: const OnboardingScreen(),
+      // theme: ThemeData(
+      //   // colorScheme: ColorScheme.fromSeed(seedColor: primary500),
+      //   useMaterial3: true,
+      // ),
+      home: const MainScreen(),
     );
   }
 }
