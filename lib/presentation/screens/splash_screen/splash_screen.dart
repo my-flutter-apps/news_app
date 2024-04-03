@@ -17,9 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
       debugPrint("My future is completed");
-      Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return const OnboardingScreen();
-      }));
+      Navigator.pushReplacementNamed(context,  "/main");
+      // Navigator.push(context, MaterialPageRoute(builder: (_) {
+      //   return const OnboardingScreen();
+      // }));
     });
   }
 

@@ -78,9 +78,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         if (formKey.currentState != null) {
                           if (formKey.currentState!.validate()) {
                             debugPrint("validated");
-                            Navigator.of(context).pushAndRemoveUntil(
-                                MaterialPageRoute(builder: (_) => const MainScreen()),
-                                (route) => false);
+                            Navigator.pushNamedAndRemoveUntil(context, "/main", (route) => false);
+                            // Navigator.of(context).pushAndRemoveUntil(
+                            //     MaterialPageRoute(builder: (_) => const MainScreen()),
+                            //     (route) => false);
                           } else {
                             debugPrint("not validated");
                           }
