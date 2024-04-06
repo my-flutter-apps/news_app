@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:news_app/presentation/screens/main_screeen/profile_screen.dart';
 
 import '../../../resources/theme/text_styles.dart';
@@ -16,12 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: const Text("Home"),
-      // leading: DrawerButton(
-      //
-      // ),
-      // ),
-      // drawer: Container(color: Colors.tealAccent,),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -29,6 +25,40 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
+              Stack(
+                alignment: Alignment.centerRight,
+                children: [
+
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 150,
+                    height: 150,
+                    color: Colors.red,
+                  ),
+                  Positioned(
+                      top: 0,
+                      left: 0,
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        color: Colors.deepPurple,
+                      )),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.yellowAccent,
+                  ),
+                ],
+              ),
               ElevatedButton(
                   onPressed: () {
                     navigateProfilePage();

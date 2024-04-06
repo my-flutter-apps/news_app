@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/presentation/screens/main_screeen/main_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/profile_screen.dart';
+import 'package:news_app/presentation/screens/main_screeen/tab_main_screen.dart';
 import 'package:news_app/presentation/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:news_app/presentation/screens/splash_screen/splash_screen.dart';
 import 'package:news_app/resources/theme/app_colors.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       case "/onboarding":
         return MaterialPageRoute(builder: (context) => const OnboardingScreen(), settings: settings);
       case "/main":
-        return MaterialPageRoute(builder: (context) => const MainScreen(), settings: settings);
+        return MaterialPageRoute(builder: (context) => const TabMainScreen(), settings: settings);
       case "/profile":
         return MaterialPageRoute(builder: (context) =>  ProfileScreen(
           arguments: ProfileScreenPageArguments.fromJson(settings.arguments as Map<String, dynamic>),

@@ -8,7 +8,10 @@ class NewsScreen extends StatelessWidget {
     return  Scaffold(
       appBar: AppBar(title: const Text("News"),),
       body: SafeArea(
-        child: Container(
+        child: Center(
+          child: ElevatedButton(onPressed: (){
+            Navigator.pushNamed(context, "/profile", arguments: {"profileName": "Luisne"});
+          }, child: Text("Click to go next page")),
         ),
       ),
     );
