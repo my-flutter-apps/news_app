@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/presentation/screens/main_screeen/favorite_screen.dart';
-import 'package:news_app/presentation/screens/main_screeen/home_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/news_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/profile_screen.dart';
-import 'package:news_app/presentation/screens/main_screeen/tab_navigator.dart';
 
 import 'first_tap/first_tap_screen.dart';
 
@@ -39,7 +36,7 @@ class _TabMainScreenState extends State<TabMainScreen> {
   int index = 0;
 
   List<Widget> pages = [
-    FirstTapScreen(),
+    const FirstTapScreen(),
     Container(color: Colors.redAccent,),
     Container(color: Colors.greenAccent,),
   ];
@@ -54,7 +51,7 @@ class _TabMainScreenState extends State<TabMainScreen> {
             index = i;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.layers), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.account_balance), label: ""),

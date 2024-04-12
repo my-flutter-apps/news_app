@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:news_app/presentation/screens/main_screeen/profile_screen.dart';
 
 import '../../../resources/theme/text_styles.dart';
 

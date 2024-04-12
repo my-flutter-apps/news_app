@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatelessWidget {
@@ -92,7 +91,7 @@ class DrawerScreen extends StatelessWidget {
             child: ListView.separated(
                 itemBuilder: (cont, index) {
                   if(index == 0) {
-                    return DrawerHeader(child: Text("I am a header"));
+                    return const DrawerHeader(child: Text("I am a header"));
                   }
                   return Card(
                     color: Colors.cyan,
@@ -102,9 +101,9 @@ class DrawerScreen extends StatelessWidget {
                       minVerticalPadding: 0.0,
                       dense: true,
                       visualDensity: VisualDensity.compact,
-                      leading: CircleAvatar(radius: 24.0,),
+                      leading: const CircleAvatar(radius: 24.0,),
                       // isThreeLine: true,
-                      trailing: Icon(Icons.arrow_circle_right_outlined),
+                      trailing: const Icon(Icons.arrow_circle_right_outlined),
                       title: Text("Title Title Title Title Title Title Title Title Title Title Title Title ${index + 1}"),
                       // subtitle: Text(
                       //     "Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle"),
@@ -126,12 +125,12 @@ class DrawerScreen extends StatelessWidget {
                       color: Colors.indigo,
                       child: Padding(
                         padding:
-                            EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                            const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                         child: Text("Hello ${index + 1}"),
                       ),
                     );
                   }
-                  return SizedBox.shrink();
+                  return const SizedBox.shrink();
                 },
                 itemCount: 100),
           ),

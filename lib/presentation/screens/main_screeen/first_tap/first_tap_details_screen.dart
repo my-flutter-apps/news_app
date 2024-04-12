@@ -14,13 +14,13 @@ class _FirstTapDetailsState extends State<FirstTapDetails> {
 
   int slidingValue = 1;
   int toggleValue = 0;
-  RangeValues rangeSliderValues = RangeValues(2, 4);
+  RangeValues rangeSliderValues = const RangeValues(2, 4);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Tap Details'),
+        title: const Text('First Tap Details'),
       ),
       body: SafeArea(
         child: Column(
@@ -33,17 +33,17 @@ class _FirstTapDetailsState extends State<FirstTapDetails> {
                     switchValue = value;
                   });
                 }),
-            Divider(
+            const Divider(
               thickness: 15,
               /* indent: 0, endIndent: 0,*/
               color: Colors.redAccent,
             ),
             // CircularProgressIndicator.adaptive(),
             // CircularProgressIndicator(),
-            LinearProgressIndicator(
+            const LinearProgressIndicator(
               value: 0.6,
             ),
-            Divider(
+            const Divider(
               thickness: 15,
               /* indent: 0, endIndent: 0,*/
               color: Colors.redAccent,
@@ -77,17 +77,17 @@ class _FirstTapDetailsState extends State<FirstTapDetails> {
                 setState(() {
                   toggleValue = i;
                 });
-              },
-              children: [
+              }, isSelected: [
+              toggleValue == 0, toggleValue == 1
+            ],
+              children: const [
               Text("One"),
               Text("Two")
-            ], isSelected: [
-              toggleValue == 0, toggleValue == 1
             ],
 
             ),
-            SizedBox(height: 32.0,),
-            CupertinoSlidingSegmentedControl(children: {
+            const SizedBox(height: 32.0,),
+            CupertinoSlidingSegmentedControl(children: const {
               1: Text("One"),
               2: Text("Two"),
               3: Text("Three"),
@@ -97,10 +97,10 @@ class _FirstTapDetailsState extends State<FirstTapDetails> {
                 slidingValue = a ?? 1;
               });
             }, groupValue: slidingValue,),
-            SizedBox(height: 32.0,),
+            const SizedBox(height: 32.0,),
             CupertinoSegmentedControl(
               groupValue: slidingValue,
-                children: {
+                children: const {
               1: Text("One"),
               2: Text("Two"),
               3: Text("Three"),
@@ -114,9 +114,9 @@ class _FirstTapDetailsState extends State<FirstTapDetails> {
               // type: StepperType.horizontal,
 
                 steps: [
-              Step(title: Text("Hello"), content: Container(color: Colors.red, height: 10,)),
-              Step(title: Text("Hello 2"), content: Container(color: Colors.orange,  height: 10,)),
-              Step(title: Text("Hello 3"), content: Container(color: Colors.blue, height: 10,)),
+              Step(title: const Text("Hello"), content: Container(color: Colors.red, height: 10,)),
+              Step(title: const Text("Hello 2"), content: Container(color: Colors.orange,  height: 10,)),
+              Step(title: const Text("Hello 3"), content: Container(color: Colors.blue, height: 10,)),
             ])
           ],
         ),

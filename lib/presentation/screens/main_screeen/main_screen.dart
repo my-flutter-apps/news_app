@@ -18,10 +18,10 @@ class _MainScreenState extends State<MainScreen> {
   GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
 
   List<Widget> pages = [
-    HomeScreen(),
-    FavoriteScreen(),
-    NewsScreen(),
-    ProfileScreen()
+    const HomeScreen(),
+    const FavoriteScreen(),
+    const NewsScreen(),
+    const ProfileScreen()
   ];
 
   void openDrawer() {
@@ -36,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       key: drawerKey,
       appBar: AppBar(
-        title: Text("Main screen"),
+        title: const Text("Main screen"),
         // leading: IconButton(
         //   icon: Icon(
         //     Icons.menu,
@@ -49,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
       //   color: Colors.green,
       // ),
       drawerEdgeDragWidth: 250.0,
-      drawer: DrawerScreen(
+      drawer: const DrawerScreen(
 
       ),
       body: pages[_currentIndex],
@@ -63,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
             _currentIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',

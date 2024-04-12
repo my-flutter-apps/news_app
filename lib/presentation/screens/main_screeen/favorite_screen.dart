@@ -52,7 +52,7 @@ class FavoriteScreen extends StatelessWidget {
                           height: 150,
                           color: Colors.yellowAccent,
                           child: TextButton(
-                            child: Text("Click"),
+                            child: const Text("Click"),
                             onPressed: () {
                               Navigator.of(cnt).pop("hello");
                             },

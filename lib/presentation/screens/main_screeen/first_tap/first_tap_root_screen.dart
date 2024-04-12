@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/presentation/screens/main_screeen/tab_main_screen.dart';
 
 import '../../../../main.dart';
 
@@ -10,7 +9,7 @@ class FirstTapRootScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FirstTapRootScreen"),
+        title: const Text("FirstTapRootScreen"),
       ),
       body: SafeArea(
         child: Container(
@@ -20,14 +19,14 @@ class FirstTapRootScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                child: Text("Go to next in tap"),
+                child: const Text("Go to next in tap"),
                 onPressed: () {
                   Navigator.pushNamed(context, '/firstTapDetails');
                 },
               ),
-              SizedBox(height: 32.0,),
+              const SizedBox(height: 32.0,),
               ElevatedButton(
-                child: Text("Go to next"),
+                child: const Text("Go to next"),
                 onPressed: () {
                   // globalNavigatorKey.currentState?.pushNamed('/firstTapDetails');
                   final cnt = globalNavigatorKey.currentState?.context;

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/presentation/widgets/custom_text_field.dart';
-import 'package:news_app/resources/theme/app_colors.dart' as colors;
 
-import '../../../../resources/theme/app_colors.dart';
-import '../../../../resources/theme/text_styles.dart' as styles;
 import '../../../widgets/title_tile_widget.dart';
-import '../../main_screeen/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -87,8 +83,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         }
                       },
-                      icon: Text('SIGN IN'),
-                      label: Icon(Icons.arrow_forward),
+                      icon: const Text('SIGN IN'),
+                      label: const Icon(Icons.arrow_forward),
                     )
                   ],
                 ),
@@ -96,18 +92,18 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Column(
               children: [
-                Row(
+                const Row(
                   children: [Divider(), Text("OR"), Divider()],
                 ),
                 OutlinedButton.icon(
                   onPressed: () {},
-                  icon: Icon(Icons.g_mobiledata),
-                  label: Text('Sign in with Google'),
+                  icon: const Icon(Icons.g_mobiledata),
+                  label: const Text('Sign in with Google'),
                 ),
                 OutlinedButton.icon(
                   onPressed: () {},
-                  icon: Icon(Icons.facebook),
-                  label: Text('Sign in with Facebook'),
+                  icon: const Icon(Icons.facebook),
+                  label: const Text('Sign in with Facebook'),
                 )
               ],
             )

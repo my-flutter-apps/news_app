@@ -11,7 +11,7 @@ class NewsScreen extends StatelessWidget {
         child: Center(
           child: ElevatedButton(onPressed: (){
             Navigator.pushNamed(context, "/profile", arguments: {"profileName": "Luisne"});
-          }, child: Text("Click to go next page")),
+          }, child: const Text("Click to go next page")),
         ),
       ),
     );
