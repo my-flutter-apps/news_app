@@ -5,6 +5,8 @@ import 'package:news_app/presentation/screens/main_screeen/news_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/profile_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/tab_navigator.dart';
 
+import 'first_tap/first_tap_screen.dart';
+
 final navigatorKey = GlobalKey<NavigatorState>();
 
 Route<dynamic>? onGenerateTabRoute(RouteSettings settings) {
@@ -36,19 +38,15 @@ class TabMainScreen extends StatefulWidget {
 class _TabMainScreenState extends State<TabMainScreen> {
   int index = 0;
 
+  List<Widget> pages = [
+    FirstTapScreen(),
+    Container(color: Colors.redAccent,),
+    Container(color: Colors.greenAccent,),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: [
-        TabNavigator(
-          tabNavigatorKey: navigatorKey,
-          currentIndex: index,
-          routeBuilders: onGenerateTabRoute,
-          // initialRoute: "/tab_main",
-        ),
-        FavoriteScreen(),
-       HomeScreen(),
-      ][index],
+      body: pages[index],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         onTap: (i) {

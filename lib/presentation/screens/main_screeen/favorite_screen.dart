@@ -36,6 +36,7 @@ class FavoriteScreen extends StatelessWidget {
           gridDelegate: gridCrossMaxDelegate,
           childrenDelegate: SliverChildBuilderDelegate(
             (context, index) {
+
               return InkWell(
                 onTap: () async {
                   final a = await showGeneralDialog<String>(
