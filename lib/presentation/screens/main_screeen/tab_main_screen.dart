@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/presentation/screens/main_screeen/favorite_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/news_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/profile_screen.dart';
 
@@ -37,8 +38,8 @@ class _TabMainScreenState extends State<TabMainScreen> {
 
   List<Widget> pages = [
     const FirstTapScreen(),
-    Container(color: Colors.redAccent,),
-    Container(color: Colors.greenAccent,),
+    const FavoriteScreen(),
+    NewsScreen(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,14 @@
 
 import 'package:flutter/material.dart';
+import 'package:news_app/config/local/shared/preferences.dart';
 import 'package:news_app/presentation/screens/main_screeen/first_tap/first_tap_details_screen.dart';
 import 'package:news_app/presentation/screens/main_screeen/tab_main_screen.dart';
 import 'package:news_app/presentation/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:news_app/presentation/screens/splash_screen/splash_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Preferences.sharedPreferences();
   runApp(const MyApp());
 }
 
